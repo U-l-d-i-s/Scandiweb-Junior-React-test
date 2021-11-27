@@ -1,6 +1,6 @@
-import QueryProducts from "./Components/QueryProducts";
-import Header from "./Components/Header";
-import CurrentCategory from "./Components/CurrentCategory";
+import QueryProducts from "./Components/Body/QueryProducts/QueryProducts";
+import Header from "./Components/Header/Header";
+import CurrentCategory from "./Components/Body/CurrentCategory";
 import { Component } from "react";
 
 class App extends Component {

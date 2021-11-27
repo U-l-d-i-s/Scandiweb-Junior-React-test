@@ -102,6 +102,7 @@ const AddToCart = (state = initialState, action) => {
     case CURRENT_PRICE: {
       let index = [];
       state.addProduct.forEach((prod,i) => {
+        console.log(prod.prices)
         index[i] = prod.prices.findIndex(cur => cur.currency === action.currency);
       })
 
