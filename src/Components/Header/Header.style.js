@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Icons = styled.div`
   display: flex;
+  position: relative; 
+  width: 80px;
   justify-content: space-between;
   align-items: center;
   width: 70px;
@@ -252,4 +254,24 @@ export const CurrencyIconContainer = styled.div`
   align-items: center;
   cursor: pointer;
   font-size: 18px;
+`;
+export const CategoryButtonFlex = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`;
+export const TopDroCartTextWrapper = styled.div`
+  width: 140px;
+  margin-bottom: 20px;
+`;
+export const TopDroCartTextContainer = styled.div`
+  display: flex;
+`;
+export const TopDroCartText = styled.p`
+  margin-right: 4px;
+`;
+export const HeaderLogo = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
 `;

@@ -14,10 +14,10 @@ export default class OutOfStockButton extends Component {
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: ${this.props.opacity};
   `;
     return (
-      <CustomButton className="Sans4"
-      $opacity = {this.props.opacity} style = {{filter: this.props.opacity}}>
+      <CustomButton className="Sans4">
         {this.props.value}
       </CustomButton>
     )

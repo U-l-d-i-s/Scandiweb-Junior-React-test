@@ -20,7 +20,6 @@ import {
 } from "../Header.style";
 import DropdownCartTopText from "./DropdownCartTopText";
 
-
 class DropdownCart extends PureComponent {
   close = () => {
     this.props.ToggleCartStateDispatch();
@@ -51,14 +50,14 @@ class DropdownCart extends PureComponent {
           </div>
           <DropDownTotal />
           <DropdownCartButtonWrapper>
-            <Link to="/CartContainer">
+            <Link to="/CartContainer" onClick = {this.close}>
               <CartButton
                 text="VIEW BAG"
                 border="1px solid black"
                 BGcolor="white"
               />
             </Link>
-            <Link to="/">
+            <Link to="/" onClick = {this.close}>
               <CartButton
                 BGcolor="#5ECE7B"
                 FontColor="white"

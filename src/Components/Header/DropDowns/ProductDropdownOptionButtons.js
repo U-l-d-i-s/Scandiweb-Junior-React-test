@@ -16,7 +16,6 @@ const CustomValueButtonContainer = styled.div`
 `;
 class ProductDropdownOptionButtons extends Component {
   handleOptionsChange = (value, attribute) => {
-    console.log(value, attribute);
     this.props.OptionsChange(value, attribute);
   };
 

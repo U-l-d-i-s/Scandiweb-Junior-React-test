@@ -7,7 +7,7 @@ import { PROD_BY_ID } from "../../../queries/QueryGql";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { ChangeOption, ProductCount } from "../../../ReduxModules/AllActions";
+import { ChangeOption, ProductCount, GetTotal } from "../../../ReduxModules/AllActions";
 
 import ListitemCartTopText from "./ListitemCartTopText";
 import {
@@ -39,6 +39,7 @@ class ListItemCart extends Component {
       this.props.qtty
     );
     this.props.ProductCountDispatch();
+    this.props.GetTotalDispatch();
   };
 
   handleOptionsChange = (value, attribute) => {
@@ -122,7 +123,7 @@ export default connect(
       {
         ChangeOptionDispatch: ChangeOption,
         ProductCountDispatch: ProductCount,
-
+        GetTotalDispatch: GetTotal,
       },
       dispatch
     )

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {BlankSpace} from '../../Body/Body.styles'
 
 export default class CustomButtonID extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class CustomButtonID extends Component {
             {id}
           </h3>
         )}
-        {this.props.fakeText === "yes" && (id === "Capacity" || id === "Size" || id === "Color")? <div style={{height: "18px"}} /> : null}
+        {this.props.fakeText === "yes" && (id === "Capacity" || id === "Size" || id === "Color")? <BlankSpace /> : null}
       </div>
     );
   }

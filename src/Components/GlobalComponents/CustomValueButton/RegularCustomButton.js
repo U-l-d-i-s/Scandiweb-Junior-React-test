@@ -1,79 +1,64 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 export default class RegularCustomButton extends Component {
-
+  
   handleOptionChangeProps = (val, attr) => {
     this.props.handleOptionsChange(val, attr);
   };
-  
+
   render() {
-    const CustomButton = styled.button`
-    margin-top: 5px;
-    margin-right: 10px;
-    width: ${this.props.width};
-    height: ${this.props.height};
-    border: ${this.props.BorderColor};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `;
+    const ChosenCustomButton = styled.button`
+      margin-top: 5px;
+      margin-right: 10px;
+      width: ${this.props.width};
+      height: ${this.props.height};
+      border: ${this.props.BorderColor};
+      background: ${this.props.BackgroundColor};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: ${this.props.fontSize};
+      color: ${this.props.FontColor};
+    `;
+    const CustomButton = styled(ChosenCustomButton)`
+      background: ${this.props.NotBackgroundColor};
+      border: ${this.props.NotBorderColor};
+      font-size: ${this.props.fontSize};
+      color: ${this.props.NotFontColor};
+    `;
+
     if (
       this.props.ChoiceIndexArr[this.props.attribute] === this.props.value &&
       this.props.value !== undefined &&
-      this.props.ChoiceIndexArr[this.props.attribute] !== undefined      ) {
-        return (
-          <CustomButton
-          disabled = "tes"
-            style={{ background: this.props.BackgroundColor }}
-            onClick={() =>
-              this.handleOptionChangeProps(
-                this.props.value,
-                this.props.attribute,
-              )
-            }
-          >
-            <p
-              id={this.props.id}
-              className="Sans4"
-              style={{
-                fontSize: this.props.fontSize,
-                color: this.props.FontColor,
-              }}
-            >
-              {this.props.value}
-            </p>
-          </CustomButton>
-        );
-      } else {
-        return (
-          <CustomButton
-            style={{
-              background: this.props.NotBackgroundColor,
-              border: this.props.NotBorderColor,
-            }}
-            onClick={() =>
-              this.handleOptionChangeProps(
-                this.props.value,
-                this.props.attribute,
-              )
-            }
-          >
-            <p
-              className="Sans4"
-              style={{
-                fontSize: this.props.fontSize,
-                color: this.props.NotFontColor,
-              }}
-            >
-              {this.props.value}
-            </p>
-          </CustomButton>
-        );
-      }
+      this.props.ChoiceIndexArr[this.props.attribute] !== undefined
+    ) {
+      return (
+        <ChosenCustomButton
+          id={this.props.id}
+          className="Sans4"
+          onClick={() =>
+            this.handleOptionChangeProps(this.props.value, this.props.attribute)
+          }
+        >
+          {this.props.value}
+        </ChosenCustomButton>
+      );
+    } else {
+      return (
+        <CustomButton
+          id={this.props.id}
+          className="Sans4"
+          onClick={() =>
+            this.handleOptionChangeProps(this.props.value, this.props.attribute)
+          }
+        >
+          {this.props.value}
+        </CustomButton>
+      );
+    }
   }
 }
 RegularCustomButton.propTypes = {

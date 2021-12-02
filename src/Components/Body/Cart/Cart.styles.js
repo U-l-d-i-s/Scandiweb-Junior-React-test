@@ -48,6 +48,11 @@ export const ImgArrowWrapper = styled.div`
   top: 0;
   right: 0;
   height: 200px;
+  ${({ $ArrowSide }) =>
+    $ArrowSide === "left" &&
+    `
+        left:0px
+        `};
 `;
 
 export const InnerCartImgWrapper = styled.div`
@@ -95,4 +100,7 @@ export const StyledArrayImg = styled.img`
   width: 200px;
   object-fit: cover;
   object-position: 0 30%;
+`;
+export const DisplayFlex = styled.div`
+  display: flex;
 `;

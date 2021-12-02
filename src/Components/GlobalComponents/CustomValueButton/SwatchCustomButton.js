@@ -1,13 +1,15 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 export default class SwatchCustomButton extends Component {
   state = {
     backgroundColorSwatch : ""
   }
+
+  
+
   componentDidMount = () => {
       this.setState({
         backgroundColorSwatch: this.props.value,
@@ -29,6 +31,10 @@ export default class SwatchCustomButton extends Component {
       align-items: center;
       background: ${this.state.backgroundColorSwatch};
 
+      ${({ $chosen }) =>
+        $chosen &&
+        `
+        transform: scale(1.1)   `}
     `;
     if (
         this.props.ChoiceIndexArr[this.props.attribute] === this.props.value &&
@@ -37,7 +43,7 @@ export default class SwatchCustomButton extends Component {
       ) {
         return (
           <CustomButtonSwatch
-            style={{ transform: "scale(1.1)" }}
+            $chosen = {true}
             onClick={(e) =>
               this.handleOptionChangeProps(
                 this.props.value,

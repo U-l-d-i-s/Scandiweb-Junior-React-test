@@ -1,5 +1,5 @@
-import { PureComponent } from "react";
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 
 import styled from "styled-components";
 import { connect } from "react-redux";
@@ -10,11 +10,12 @@ import {
   HackyUnderline,
   ListItemCategoriesButton,
   CategButton,
+  CategoryButtonFlex
 } from "../Header.style";
 import "../../../CssStyles/Header.css";
 import "../../../fonts/fonts.css";
 
-class CategoriesButton extends PureComponent {
+class CategoriesButton extends Component {
   handleCategorieChange = (val) => {
     this.props.CurrentCategoryDispatch(val);
   };
@@ -25,61 +26,58 @@ class CategoriesButton extends PureComponent {
         $active &&
         `
     color: #5ece7b;
-
   `}
     `;
     return (
-      <ul style={{ display: "flex", justifyContent: "space-between" }}>
+      <CategoryButtonFlex>
         <Link to="/">
-        <ListItemCategoriesButton  key="clothes">
-          <ActiveButton
-            $active={"clothes" === this.props.categor}
-            className="Rale6"
-            onClick={(e) => {
-              e.preventDefault();
-              this.handleCategorieChange(
-                e.currentTarget.textContent.toLowerCase()
-              );
-            }}
-          >
-            CLOTHES
-          </ActiveButton>
-          {/* Hacky underline */}
-          {"clothes" === this.props.categor ? (
-            <HackyUnderline></HackyUnderline>
-          ) : undefined}
-        </ListItemCategoriesButton>
+          <ListItemCategoriesButton key="clothes">
+            <ActiveButton
+              $active={"clothes" === this.props.categor}
+              className="Rale6"
+              onClick={(e) => {
+                this.handleCategorieChange(
+                  e.currentTarget.textContent.toLowerCase()
+                );
+              }}
+            >
+              CLOTHES
+            </ActiveButton>
+            {/* Hacky underline */}
+            {"clothes" === this.props.categor ? (
+              <HackyUnderline></HackyUnderline>
+            ) : undefined}
+          </ListItemCategoriesButton>
         </Link>
 
         <Link to="/">
-        <ListItemCategoriesButton  key="tech">
-          <ActiveButton
-            $active={"tech" === this.props.categor}
-            className="Rale6"
-            onClick={(e) => {
-              this.handleCategorieChange(
-                e.currentTarget.textContent.toLowerCase()
-              );
-            }}
-          >
-            TECH
-          </ActiveButton>
-          {/* Hacky underline */}
-          {"tech" === this.props.categor ? (
-            <HackyUnderline></HackyUnderline>
-          ) : undefined}
-        </ListItemCategoriesButton>
+          <ListItemCategoriesButton key="tech">
+            <ActiveButton
+              $active={"tech" === this.props.categor}
+              className="Rale6"
+              onClick={(e) => {
+                this.handleCategorieChange(
+                  e.currentTarget.textContent.toLowerCase()
+                );
+              }}
+            >
+              TECH
+            </ActiveButton>
+            {/* Hacky underline */}
+            {"tech" === this.props.categor ? (
+              <HackyUnderline></HackyUnderline>
+            ) : undefined}
+          </ListItemCategoriesButton>
         </Link>
-
-      </ul>
+      </CategoryButtonFlex>
     );
   }
 }
 
 CategoriesButton.propTypes = {
-  categor : PropTypes.string,
-  CurrentCategoryDispatch : PropTypes.func
-} 
+  categor: PropTypes.string,
+  CurrentCategoryDispatch: PropTypes.func,
+};
 
 export default connect(
   (state) => ({

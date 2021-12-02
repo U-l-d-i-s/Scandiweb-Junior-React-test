@@ -1,14 +1,14 @@
 import { Component } from "react";
+import {BigImgObject} from '../Body.styles'
 
 export default class BigImg extends Component {
   render() {
     return (
-        <object
-          style={{height: "500px", width: "auto" , paddingLeft: "30px", paddingTop: "5px"}}
+        <BigImgObject
           data={this.props.data}
           type="image/jpg"
-        ></object>
+          aria-labelledby="picture"
+        ></BigImgObject>
     );
   }
 }
-// style={{ minHeight: "600px", width: "1000px" }}

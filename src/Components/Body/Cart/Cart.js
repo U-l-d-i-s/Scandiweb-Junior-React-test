@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { ChangeOption, ProductCount } from "../../../ReduxModules/AllActions";
+import { ChangeOption, ProductCount, GetTotal } from "../../../ReduxModules/AllActions";
 
 import { Query } from "@apollo/client/react/components";
 import { PROD_BY_ID } from "../../../queries/QueryGql";
@@ -16,6 +16,7 @@ import {
   CartFlex,
   CartProduct,
   CartImgWrapper,
+  DisplayFlex
 } from "./Cart.styles";
 import ImgArray from "./ImgArray";
 
@@ -31,6 +32,8 @@ class Cart extends Component {
       this.props.qtty
     );
     this.props.ProductCountDispatch();
+    this.props.GetTotalDispatch();
+
   };
   handleOptionsChange = (value, attribute) => {
     this.setState(
@@ -75,7 +78,7 @@ class Cart extends Component {
                 </CartProduct>
               </CartFlex>
 
-              <div style={{ display: "flex" }}>
+              <DisplayFlex >
                 <IncDecButtonsProduct
                   id={this.props.id}
                   options={this.props.options}
@@ -84,7 +87,7 @@ class Cart extends Component {
                 <CartImgWrapper>
                   <ImgArray data={data.product} />
                 </CartImgWrapper>
-              </div>
+              </DisplayFlex>
             </CartWrapper>
           );
         }}
@@ -114,6 +117,8 @@ export default connect(
       {
         ChangeOptionDispatch: ChangeOption,
         ProductCountDispatch: ProductCount,
+        GetTotalDispatch: GetTotal,
+
       },
       dispatch
     )

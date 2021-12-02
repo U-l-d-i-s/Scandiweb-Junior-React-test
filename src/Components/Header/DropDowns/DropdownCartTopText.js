@@ -1,16 +1,16 @@
 import { Component } from "react";
-
+import {TopDroCartTextWrapper, TopDroCartTextContainer, TopDroCartText} from '../Header.style'
 export default class DropdownCartTopText extends Component {
   render() {
     return (
-      <div style={{ width: "140px", marginBottom: "20px" }}>
-        <h5 style={{ display: "flex" }} className="Rale5 s16">
-          <p style={{ marginRight: "4px" }} className="Rale7 s16">
+      <TopDroCartTextWrapper >
+        <TopDroCartTextContainer className="Rale5 s16">
+          <TopDroCartText className="Rale7 s16">
             My Bag,{" "}
-          </p>
+          </TopDroCartText>
           {this.props.quantityOfProducts} items
-        </h5>
-      </div>
+        </TopDroCartTextContainer>
+      </TopDroCartTextWrapper>
     );
   }
 }

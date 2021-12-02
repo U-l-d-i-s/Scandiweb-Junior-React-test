@@ -11,25 +11,21 @@ import "../../../fonts/fonts.css";
 import {
   ProductDescriptionWrapper,
   ProductDescriptionImagesWrapper,
-  TextContainer
+  TextContainer,
+  BrandWithMargin,
+  StyledOutOfStock
 } from "../Body.styles";
 import ProductImgArray from "./ProductImgArray";
 import { amount } from "../../Methods/DataMutationMethods";
 import DangerousHtml from "./DangerousHtml";
 import ProductPrice from './ProductPrice'
-import {
-  StyledOutOfStock,
-} from "../Body.styles";
+
 import ProductOptionButtonsOutOfStock from './ProductOptionButtonsOutOfStock';
 
 class ProductOutOfStock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       bigPicture: 0,
-    };
-  }
-
+    }
 
   handleOnClickImg = (e, d) => {
     this.setState({
@@ -57,9 +53,9 @@ class ProductOutOfStock extends Component {
               </ProductDescriptionImagesWrapper>
 
               <TextContainer>
-                <h1 className="Rale6 s30" style={{ marginBottom: "10px" }}>
+                <BrandWithMargin className="Rale6 s30">
                   {data.product.brand}
-                </h1>
+                </BrandWithMargin>
                 <h2 className="Rale4 s30">{data.product.name}</h2>
 
                <ProductOptionButtonsOutOfStock

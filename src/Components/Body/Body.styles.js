@@ -102,4 +102,28 @@ export const TextContainer = styled.div`
  export const CustomValueButtonContainer = styled.div`
     margin-top: 40px;
   `;
-  
+  export const BrandWithMargin = styled.div`
+    margin-bottom: 10px;
+  `;
+  export const ProductDescriptionContainerOutter = styled.div`
+  margin-bottom: 40px;
+`;
+  export const ProductDescriptionContainerInner = styled.div`
+  padding-top: 80px;
+`;
+export const ShowMore = styled.p`
+  cursor: pointer;
+  color: blue;
+`;
+export const DangerousHtmlContainer = styled.div`
+margin-top: 30px;
+`;
+export const BigImgObject = styled.object`
+height:500px;
+width:auto;
+padding-left:30px;
+padding-top:5px;
+`;
+export const BlankSpace = styled.div`
+height: 18px;
+`;

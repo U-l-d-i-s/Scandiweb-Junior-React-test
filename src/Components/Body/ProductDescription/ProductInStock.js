@@ -12,7 +12,8 @@ import "../../../fonts/fonts.css";
 import {
   ProductDescriptionWrapper,
   ProductDescriptionImagesWrapper,
-  TextContainer
+  TextContainer,
+  BrandWithMargin,
 } from "../Body.styles";
 import ProductImgArray from "./ProductImgArray";
 import { amount } from "../../Methods/DataMutationMethods";
@@ -60,9 +61,9 @@ class ProductInStock extends Component {
               </ProductDescriptionImagesWrapper>
 
               <TextContainer>
-                <h1 className="Rale6 s30" style={{ marginBottom: "10px" }}>
+                <BrandWithMargin className="Rale6 s30">
                   {data.product.brand}
-                </h1>
+                </BrandWithMargin>
                 <h2 className="Rale4 s30">{data.product.name}</h2>
 
                <ProductOptionButtons

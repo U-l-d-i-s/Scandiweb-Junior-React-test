@@ -35,7 +35,7 @@ export default class ImgArray extends Component {
         {imgArray[1] !== undefined ? (
           <ImgArrowWrapperOnHover>
             <ImgArrowWrapper
-              style={{ left: "0px" }}
+              $ArrowSide = "left"
               onClick={() =>
                 this.state.picture === imgArray.length - 1
                   ? this.setState({ picture: 0 })
@@ -48,7 +48,6 @@ export default class ImgArray extends Component {
             <DummyImgAlignDiv />
 
             <ImgArrowWrapper
-              style={{ right: "0px" }}
               onClick={() =>
                 this.state.picture === 0
                   ? this.setState({ picture: imgArray.length - 1 })

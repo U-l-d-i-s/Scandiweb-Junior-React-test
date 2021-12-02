@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { MainHeader, Icons, HeaderCategories } from "./Header.style";
+import { MainHeader, Icons, HeaderCategories, HeaderLogo } from "./Header.style";
 import PropTypes from 'prop-types';
 
 
@@ -28,22 +28,16 @@ class Header extends Component {
         <div
         >
           <Link to="/">
-            <img
+            <HeaderLogo
               onClick= { () => this.handleCategorieChange("")}
               src="../images/a-logo.png"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginRight:"50px"
-              }}
               alt="logo"
             />
           </Link>
         </div>
 
         <div>
-          <Icons style={{ position: "relative", width: "80px" }}>
+          <Icons>
             <Dropdown />
           </Icons>
         </div>

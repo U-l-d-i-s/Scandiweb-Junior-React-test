@@ -1,16 +1,17 @@
 import { Component } from 'react'
 import Header from '../../Header/Header'
 import ProductDescription from './ProductDescription'
+import {ProductDescriptionContainerOutter, ProductDescriptionContainerInner} from '../Body.styles'
 
 export default class ProductDescriptionContainer extends Component {
   render() {
     return (
-      <div style={{ marginBottom: "40px"}}>
+      <ProductDescriptionContainerOutter>
         <Header />
-        <div style={{ paddingTop: "80px" }}>
+        <ProductDescriptionContainerInner>
           <ProductDescription id = {this.props.match.params.id} />
-        </div>
-      </div>
+        </ProductDescriptionContainerInner>
+      </ProductDescriptionContainerOutter>
     )
   }
 }
