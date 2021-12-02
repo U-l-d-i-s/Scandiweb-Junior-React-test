@@ -4,7 +4,6 @@ import styled from "styled-components";
 import "../../../fonts/fonts.css";
 
 const CurrencyStyle = styled.p`
-
   cursor: pointer;
   :hover{
     transform: scale(1.01);
