@@ -7,9 +7,6 @@ export default class SwatchCustomButton extends Component {
   state = {
     backgroundColorSwatch : ""
   }
-
-  
-
   componentDidMount = () => {
       this.setState({
         backgroundColorSwatch: this.props.value,
